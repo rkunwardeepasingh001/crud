@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>ARE YOU WANT TO SURE_DELETE !</h3>
+  <a href="{% url 'read' %}"class="button-link" >
+    <button type="button" class="cancelbtn">cancel</button>
+  </a>
+  <a href="{% url 'delete' idd.ids %}">
+  <button type="button" class="sure">yes</button>
+</a>
+</body>
+</html>

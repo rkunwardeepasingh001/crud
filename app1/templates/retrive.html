@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Retrieve</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    h3,table {
+     background-color: rgb(145, 133, 133);  
+    }
+  </style>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <table align="center">
+    <h3 align="center"> -:STUDENT-DATA:- </h3>
+    <h3 align="center"><a href="/create/">create</a></h3>
+      
+      
+    <tr align="center">
+      <th>id</th>
+      <th>name</th>
+      <th>mob</th>
+      <th>email</th>
+      <th>password</th>
+      <th>delete</th>
+      <th>view</th>
+      <th>create</th>
+      <th>update</th>
+      <th>image</th>
+    </tr>
+    {% for obj in data %}
+    <tr align="center">
+      <td>{{obj.ids}}</td>
+      <td>{{obj.name}}</td>
+      <td>{{obj.mob}}</td>
+      <td>{{obj.email}}</td>
+      <td>{{obj.password}}</td>
+      <td><a href="/{{ obj.ids }}/sure_delete/">delete</a></td>
+      <td><a href="/{{ obj.ids }}/V_P_detail/">view</a></td>
+      <td><a href="/create/">create</a></td>
+      <td><a href="/{{ obj.ids }}/update/">update</a></td>
+      <td>
+      {% if obj.image %}
+      <button><a href="{{ obj.image.url }}"><img src="{{ obj.image.url }}" alt="image" height="50" width="50"></a></button>
+      
+      {% endif %}
+    </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
